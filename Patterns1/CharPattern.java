@@ -24,12 +24,11 @@ public class CharPattern {
        
         while(i<=n){
             int j =0;
-            int k =i;
+            char  ch = (char)('A'+i-1);
             while(j<i){
-                char  ch = (char)('A'+k-1);
                 System.out.print(ch +" ");
                 j+=1;
-                k++;
+                ch =(char)(ch+1);
             }
             i+=1;
             System.out.println();
