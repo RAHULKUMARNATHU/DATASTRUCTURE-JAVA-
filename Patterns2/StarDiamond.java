@@ -1,3 +1,23 @@
+/*
+Code : Diamond of stars
+Send Feedback
+Print the following pattern for the given number of rows.
+Note: N is always odd.
+
+
+Pattern for N = 5
+  *
+ ***
+*****
+ ***
+  *
+
+
+The dots represent spaces*/
+
+
+
+
 import java.util.Scanner;
 public class StarDiamond{
 
