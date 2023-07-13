@@ -2,7 +2,7 @@
 
 import java.util.Scanner;
 
-public class printFactorial{
+public class PrintFactorial{
     public static int findFactorial(int n ){
         if(n ==0){
             return 1;
