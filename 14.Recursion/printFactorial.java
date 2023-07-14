@@ -1,5 +1,4 @@
 /*Find factorial */
-
 import java.util.Scanner;
 
 public class PrintFactorial{
