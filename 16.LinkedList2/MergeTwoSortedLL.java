@@ -29,6 +29,7 @@ public class MergeTwoSortedLL {
         if (head1 == null) {
             return head2;
         }
+
         if (head2 == null) {
             return head1;
         }
@@ -89,9 +90,9 @@ public class MergeTwoSortedLL {
 
     public static void printLL(Node<Integer> head) {
         if (head == null) {
-            return;
+            return ;
         }
-        System.out.print(head.data + " ");
+        System.out.print(head.data+ " ");
         printLL((head.next));
 
     }
