@@ -58,11 +58,12 @@ public class BrowserHistory {
 
         String forwardPage = bh.forward(2);
 
-        bh.visit("url5");
-
+        
         System.out.println(forwardPage);
-
+        
         String backPage = bh.back(2);
+        bh.visit("url5");
+        System.out.println("Current Page: " + bh.head.url);
         System.out.println(backPage);
 
     }
