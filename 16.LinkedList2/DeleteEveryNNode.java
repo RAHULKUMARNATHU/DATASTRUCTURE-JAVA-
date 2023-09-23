@@ -57,34 +57,67 @@ public class DeleteEveryNNode {
 
     }
 
+    // public static Node<Integer> skipMDeleteN(Node<Integer> head, int m, int n) {
+    // if (head == null || m == 0) {
+    // return null;
+    // }
+    // if (n == 0) {
+    // return head;
+    // }
+
+    // // int count = 1;
+    // Node<Integer> currentHead = head, prev = null;
+    // while (currentHead != null) {
+    // int skip = 1;
+    // int take = 1;
+    // while (currentHead != null & take < m) {
+    // if (prev == null) {
+    // prev = currentHead;
+    // } else {
+    // prev.next = currentHead;
+    // }
+    // currentHead = currentHead.next;
+    // take += 1;
+
+    // }
+    // while (currentHead != null && skip < n) {
+    // currentHead = currentHead.next;
+    // skip += 1;
+    // }
+    // }
+    // return head;
+    // }
+
     public static Node<Integer> skipMDeleteN(Node<Integer> head, int m, int n) {
+
         if (head == null || m == 0) {
             return null;
         }
-        if(n == 0){
-            return head ;
+        if (n == 0 && head != null) {
+            return head;
         }
+        Node<Integer> currentNode = head;
 
-        // int count = 1;
-        Node<Integer> currentHead = head, prev = null;
-        while (currentHead != null) {
+       
+            
             int skip = 1;
-            int take = 1;
-            while (currentHead != null & take < m) {
-                if (prev == null) {
-                    prev = currentHead;
-                } else {
-                    prev.next = currentHead;
-                }
-                currentHead = currentHead.next;
-                take += 1;
-
-            }
-            while (currentHead != null && skip < n) {
-                currentHead = currentHead.next;
+            while (skip < m && currentNode != null) {
+                currentNode = currentNode.next;
                 skip += 1;
             }
-        }
+
+            if (currentNode != null) {
+                 Node<Integer> prevNode = currentNode.next ;
+                 int delete = 1;
+                while (prevNode != null && delete <= n) {
+                    prevNode = prevNode.next;
+                    delete += 1;
+
+                }
+                currentNode.next = skipMDeleteN(prevNode, m, n);
+            }
+
+    
         return head;
     }
 
@@ -110,8 +143,11 @@ public class DeleteEveryNNode {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Node<Integer> head = takeInput(sc);
-        head = skipMDeleteN(head, 0, 1);
+        head = skipMDeleteN(head, 2, 2);
         printLL(head);
 
     }
 }
+
+
+
